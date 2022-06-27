@@ -8,7 +8,7 @@ describe("BlogNFT", function () {
         const blogNFTContract = await ethers.getContractFactory("BlogNFT");
         const blogNFT = await blogNFTContract.deploy();
         await blogNFT.deployed();
-        
+
         testBlogURI = "https://www.google.com";
         const [owner] = await ethers.getSigners();
 
