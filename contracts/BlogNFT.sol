@@ -26,7 +26,7 @@ contract BlogNFT is Ownable, ERC721 ("BlogNFT", "BNFT"){
         _mint(_recipient, tokenId);
         if(_checkForDuplicateTokenURIs(_blogURI)){
             BlogRecord.push(tokenMetaData(tokenId, block.timestamp, _blogURI));
-            TokenIdToOwnerMap[tokenId] = msg.sender;
+            TokenIdToOwnerMap[tokenId] = _recipient;
             OwnerBlogCount[_recipient] = OwnerBlogCount[_recipient] + 1;
             emit newBlogToken(tokenId, _blogURI);
             tokenId = tokenId + 1;
